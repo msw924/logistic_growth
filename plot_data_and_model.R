@@ -1,6 +1,6 @@
 #Script to plot data and model
 
-growth_data <- read.csv("???")
+growth_data <- read.csv("experiment")
 
 logistic_fun <- function(t) {
   
@@ -10,13 +10,14 @@ logistic_fun <- function(t) {
   
 }
 
-N0 <- ??? #
+#these are the values estimated from the "fit linear model.R" - using linear models to find these values 
+N0 <- 879
   
-r <- ??? #
+r <- 1.004e-02
   
-K <- ??? #
+K <- 6.000e+10
 
-ggplot(aes(???,???), data = growth_data) +
+ggplot(aes(t,N), data = growth_data) +
   
   geom_function(fun=logistic_fun, colour="red") +
   
